@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Build a 6 figure ethical healthcare practice in 90 days. Join 100+ ethical doctors achieving 10x growth without pushy marketing." />
+<title>Clarity Blueprint · Build a 10x Ethical Healthcare Practice</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   DESIGN SYSTEM · CLARITY BLUEPRINT
+   ============================================ */
+:root {
+  /*COLOR TOKENS */
+  --ink:       #0a0418;
+  --navy:      #1a1147;
+  --deep:      #2d1b69;
+  --purple:    #8b5cf6;
+  --violet:    #a855f7;
+  --lilac:     #c4b5fd;
+  --cream:     #faf8ff;
+  --white:     #ffffff;
+  --gold:      #fbbf24;
+  --gold-dk:   #f59e0b;
+  --mint:      #10b981;
+  --coral:     #ef4444;
+  --gray-50:   #f9fafb;
+  --gray-100:  #f3f4f6;
+  --gray-200:  #e5e7eb;
+  --gray-400:  #9ca3af;
+  --gray-500:  #6b7280;
+  --gray-600:  #4b5563;
+  --gray-700:  #374151;
+  --gray-900:  #111827;
+
+  /*SINGLE PRIMARY GRADIENT */
+  --grad:      linear-gradient(135deg, var(--ink) 0%, var(--navy) 45%, var(--deep) 100%);
+  --grad-text: linear-gradient(135deg, var(--navy) 0%, var(--purple) 50%, var(--violet) 100%);
+  --grad-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-dk) 100%);
+
+  /*SPACING (8pt grid) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 16px;
+  --s-4: 24px;
+  --s-5: 32px;
+  --s-6: 48px;
+  --s-7: 64px;
+  --s-8: 96px;
+  --s-9: 128px;
+
+  /*RADIUS */
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+
+  /*TYPE */
+  --f-sans: 'Inter', system-ui, sans-serif;
+  --f-hand: 'Caveat', cursive;
+
+  /*SHADOW */
+  --sh-card:   0 1px 3px rgba(10, 4, 24, 0.06), 0 4px 12px rgba(10, 4, 24, 0.04);
+  --sh-float:  0 8px 24px rgba(10, 4, 24, 0.08), 0 16px 48px rgba(10, 4, 24, 0.06);
+  --sh-lift:   0 20px 40px -12px rgba(139, 92, 246, 0.25);
+  --sh-glow-p: 0 0 0 1px rgba(139, 92, 246, 0.2), 0 24px 48px -12px rgba(139, 92, 246, 0.4);
+  --sh-glow-g: 0 0 0 1px rgba(251, 191, 36, 0.3), 0 24px 48px -12px rgba(251, 191, 36, 0.5);
+
+  /*MOTION */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*RESET */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--f-sans); color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; line-height: 1.5; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font: inherit; cursor: pointer; border: 0; background: none; }
+ul, ol { list-style: none; }
+
+/*UTILITIES */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--s-4); }
+.container-sm { max-width: 820px; margin: 0 auto; padding: 0 var(--s-4); }
+.center { text-align: center; }
+
+/* ============================================
+   COMPONENT: SECTION
+   ============================================ */
+.section { padding: var(--s-8) 0; position: relative; }
+.section--cream { background: var(--cream); }
+.section--dark { background: var(--grad); color: var(--white); overflow: hidden; }
+.section__eyebrow {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--purple);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--s-4);
+}
+.section--dark .section__eyebrow {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--gold);
+}
+.section__title {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s-3);
+}
+.section__lead {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.section--dark .section__lead { color: rgba(255, 255, 255, 0.8); }
+.section__header { text-align: center; margin-bottom: var(--s-6); }
+
+/* ============================================
+   COMPONENT: BUTTON
+   ============================================ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2);
+  padding: 14px 28px;
+  border-radius: var(--r-pill);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease);
+  white-space: nowrap;
+}
+.btn--lg { padding: 18px 36px; font-size: 17px; }
+.btn--primary {
+  background: var(--grad);
+  color: var(--white);
+  box-shadow: var(--sh-glow-p);
+}
+.btn--primary:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4), 0 32px 56px -12px rgba(139, 92, 246, 0.5); }
+.btn--gold {
+  background: var(--grad-gold);
+  color: var(--ink);
+  box-shadow: var(--sh-glow-g);
+}
+.btn--gold:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.5), 0 32px 56px -12px rgba(251, 191, 36, 0.6); }
+.btn--ghost {
+  background: transparent;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+}
+.btn--ghost:hover { background: var(--ink); color: var(--white); }
+.btn--ghost-light {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
+}
+.btn--ghost-light:hover { background: rgba(255, 255, 255, 0.18); }
+.btn__tag {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  font-size: 10px;
+}
+
+/* ============================================
+   COMPONENT: CARD
+   ============================================ */
+.card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--sh-lift); }
+.card--dark { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); }
+.card--feature { background: var(--cream); border-color: rgba(139, 92, 246, 0.15); }
+.card__icon {
+  width: 48px; height: 48px;
+  border-radius: var(--r-md);
+  background: var(--grad);
+  color: var(--white);
+  font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--s-3);
+}
+.card__title { font-size: 1.125rem; font-weight: 800; margin-bottom: var(--s-2); letter-spacing: -0.01em; }
+.card__body { font-size: 0.9rem; color: var(--gray-600); line-height: 1.6; }
+
+/* ============================================
+   COMPONENT: BADGE
+   ============================================ */
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.badge--gold { background: var(--gold); color: var(--ink); }
+.badge--live {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--gold);
+  backdrop-filter: blur(8px);
+}
+.badge--feature { background: rgba(139, 92, 246, 0.1); color: var(--purple); }
+
+/* ============================================
+   COMPONENT: AVATAR (single canonical)
+   ============================================ */
+.avatar {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--white);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  border: 2px solid var(--white);
+  box-shadow: var(--sh-card);
+  position: relative;
+  overflow: hidden;
+  background: var(--grad);
+  font-size: 0.75rem;
+}
+.avatar::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 45%, rgba(255, 255, 255, 0.25));
+  pointer-events: none;
+}
+.avatar--sm { width: 32px; font-size: 10px; }
+.avatar--md { width: 44px; font-size: 12px; }
+.avatar--lg { width: 56px; font-size: 14px; }
+.avatar--medical::before {
+  content: ''; position: absolute; bottom: -2px; right: -2px;
+  width: 30%; height: 30%;
+  background: var(--white);
+  border-radius: 50%;
+  border: 2px solid var(--purple);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 4v16M4 12h16'/></svg>");
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.stars-5 { display: inline-flex; gap: 2px; color: var(--gold); }
+.stars-5 .icon { width: 14px; height: 14px; }
+
+/* Color variants via inline hue shift */
+.avatar[data-hue="1"] { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.avatar[data-hue="2"] { background: linear-gradient(135deg, #a855f7, #8b5cf6); }
+.avatar[data-hue="3"] { background: linear-gradient(135deg, #c4b5fd, #8b5cf6); }
+.avatar[data-hue="4"] { background: linear-gradient(135deg, #1a1147, #8b5cf6); }
+.avatar[data-hue="5"] { background: linear-gradient(135deg, #6d28d9, #4c1d95); }
+.avatar[data-hue="6"] { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: var(--ink); }
+.avatar[data-hue="7"] { background: linear-gradient(135deg, #2d1b69, #8b5cf6); }
+.avatar[data-hue="8"] { background: linear-gradient(135deg, #a855f7, #c4b5fd); }
+
+/* ============================================
+   COMPONENT: GRADIENT TEXT
+   ============================================ */
+.gt {
+  background: var(--grad-text);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gt-gold {
+  background: var(--grad-gold);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================
+   NAV
+   ============================================ */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+.nav__inner { display: flex; align-items: center; justify-content: space-between; padding: var(--s-3) 0; }
+.nav__logo { display: flex; align-items: center; gap: 10px; }
+.nav__sig { font-family: var(--f-hand); font-weight: 700; font-size: 2rem; line-height: 1; }
+.nav__sig-img { height: 38px; width: auto; display: block; }
+.footer__sig-img { height: 42px; width: auto; display: block; filter: brightness(0) invert(1); opacity: 0.85; }
+.mission-signoff__sig-img { height: 54px; width: auto; display: block; filter: brightness(0) invert(1); opacity: 0.95; margin-bottom: 4px; }
+.hero-portrait__name-img { height: 44px; width: auto; display: block; filter: brightness(0) invert(1); opacity: 0.95; }
+.nav__tag { font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--purple); }
+.nav__links { display: flex; gap: var(--s-4); }
+.nav__link { font-size: 14px; font-weight: 600; color: var(--navy); transition: color 0.2s; }
+.nav__link:hover { color: var(--purple); }
+@media (max-width: 900px) { .nav__links { display: none; } .nav__tag { display: none; } }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(168, 85, 247, 0.35), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 85% 60%, rgba(139, 92, 246, 0.25), transparent 70%),
+    var(--grad);
+  color: var(--white);
+  overflow: hidden;
+  position: relative;
+  padding: var(--s-8) 0 var(--s-8);
+}
+.hero__blob {
+  position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.4; pointer-events: none;
+}
+.hero__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--s-7); align-items: center; position: relative; z-index: 1; }
+@media (max-width: 960px) { .hero__grid { grid-template-columns: 1fr; gap: var(--s-6); } }
+
+.hero__eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--gold);
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: var(--s-4);
+}
+.hero__title {
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  margin-bottom: var(--s-4);
+}
+.hero__title-sub {
+  display: block;
+  font-size: 0.55em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: var(--s-2);
+  letter-spacing: -0.02em;
+}
+.hero__lead {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 540px;
+  line-height: 1.6;
+  margin-bottom: var(--s-5);
+}
+.hero__bonus-teaser {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 12px 18px;
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--s-5);
+  font-size: 14px;
+}
+.hero__bonus-teaser b { color: var(--gold); }
+.hero__ctas { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-bottom: var(--s-5); }
+.hero__trust { display: flex; align-items: center; gap: var(--s-3); }
+.hero__trust-stack { display: flex; }
+.hero__trust-stack > * { margin-left: -10px; }
+.hero__trust-stack > *:first-child { margin-left: 0; }
+.hero__trust-meta { font-size: 12px; color: rgba(255, 255, 255, 0.75); }
+.hero__trust-meta .stars { color: var(--gold); font-size: 13px; }
+
+/* Hero VSL */
+.vsl {
+  background:
+    linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(168, 85, 247, 0.25)),
+    radial-gradient(circle at 50% 50%, var(--navy), var(--ink));
+  border-radius: var(--r-xl);
+  padding: var(--s-4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--sh-glow-p);
+}
+.vsl__video {
+  aspect-ratio: 16/9;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, var(--navy), var(--ink));
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.vsl__video::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), transparent); }
+.vsl__play {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--grad-gold);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1;
+  box-shadow: 0 12px 32px rgba(251, 191, 36, 0.4);
+  transition: transform 0.3s var(--ease);
+}
+.vsl__video:hover .vsl__play { transform: scale(1.1); }
+.vsl__play svg { width: 28px; height: 28px; fill: var(--ink); margin-left: 4px; }
+.vsl__label {
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); font-weight: 800;
+  margin-top: var(--s-4); margin-bottom: var(--s-1);
+}
+.vsl__title { font-size: 1.1rem; font-weight: 800; line-height: 1.3; margin-bottom: var(--s-4); color: var(--white); }
+.vsl__meta { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-2); margin-bottom: var(--s-4); }
+.vsl__meta-item { background: rgba(255, 255, 255, 0.05); padding: 10px 12px; border-radius: var(--r-sm); }
+.vsl__meta-label { font-size: 10px; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 0.1em; }
+.vsl__meta-val { font-size: 13px; font-weight: 800; color: var(--white); }
+
+/* Live dot */
+.live-dot {
+  width: 8px; height: 8px; background: var(--mint); border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Stats strip */
+.stats {
+  margin-top: var(--s-7);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-3);
+}
+@media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+.stat {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--r-lg);
+  padding: var(--s-4);
+  text-align: center;
+}
+.stat__num { font-size: 2rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+.stat__label { font-size: 10px; color: rgba(255, 255, 255, 0.6); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ============================================
+   MARQUEE
+   ============================================ */
+.marquee-section { padding: var(--s-5) 0; border-bottom: 1px solid var(--gray-100); }
+.marquee-label { text-align: center; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-400); font-weight: 800; margin-bottom: var(--s-3); }
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.marquee__track {
+  display: flex; gap: var(--s-6);
+  animation: marquee 40s linear infinite;
+  white-space: nowrap;
+}
+.marquee__item { font-size: 1.5rem; font-weight: 900; color: var(--gray-200); }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ============================================
+   PROBLEM GRID
+   ============================================ */
+.problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-3); }
+@media (max-width: 700px) { .problem-grid { grid-template-columns: 1fr; } }
+.problem-card {
+  background: var(--white);
+  border-left: 4px solid var(--coral);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  padding: var(--s-4);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.problem-card:hover { transform: translateY(-3px); box-shadow: var(--sh-float); }
+.problem-card__emoji { font-size: 1.75rem; margin-bottom: var(--s-2); }
+.problem-card__title { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; }
+.problem-card__body { font-size: 0.85rem; color: var(--gray-600); line-height: 1.55; }
+.problem__kicker {
+  text-align: center;
+  margin-top: var(--s-6);
+  font-size: 1.35rem;
+  font-weight: 800;
+  max-width: 640px;
+  margin-left: auto; margin-right: auto;
+  line-height: 1.4;
+}
+
+/* ============================================
+   MISSION
+   ============================================ */
+.mission-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--s-7);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .mission-grid { grid-template-columns: 1fr; gap: var(--s-5); }
+}
+
+.mission-photo {
+  position: relative;
+}
+.mission-photo__img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--sh-glow-p);
+  background: linear-gradient(135deg, var(--deep), var(--purple));
+}
+.mission-photo__badge {
+  position: absolute;
+  bottom: var(--s-4);
+  left: var(--s-4);
+  right: var(--s-4);
+  background: rgba(10, 4, 24, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--r-md);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.mission-photo__badge-num { font-size: 1.25rem; font-weight: 900; color: var(--gold); line-height: 1; }
+.mission-photo__badge-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 800; color: rgba(255, 255, 255, 0.7); margin-top: 4px; }
+
+.mission-body__lead {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+  margin: var(--s-4) 0 var(--s-5);
+}
+.mission-pillars-v { display: flex; flex-direction: column; gap: var(--s-3); margin-bottom: var(--s-5); }
+.mission-pillar-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--r-md);
+}
+.mission-pillar-row__num { font-size: 1.1rem; font-weight: 900; color: var(--gold); flex-shrink: 0; letter-spacing: -0.02em; }
+.mission-pillar-row__title { font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
+.mission-pillar-row__body { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); line-height: 1.55; }
+
+.mission-signoff {
+  padding: var(--s-4) var(--s-5);
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(139, 92, 246, 0.08));
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: var(--r-md);
+}
+.mission-signoff__text { font-size: 1rem; color: rgba(255, 255, 255, 0.9); font-style: italic; line-height: 1.6; margin-bottom: var(--s-2); }
+.mission-signoff__sig { font-family: var(--f-hand); font-size: 2.5rem; line-height: 1; margin-bottom: 2px; }
+.mission-signoff__name { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 800; color: rgba(255, 255, 255, 0.55); }
+
+/* ============================================
+   ABOUT NISHU
+   ============================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--s-7);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: var(--s-5); }
+  .about-grid .about-photo { order: -1; }
+}
+.about-photo {
+  position: relative;
+}
+.about-photo__img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-float);
+  background: linear-gradient(135deg, var(--cream), var(--lilac));
+}
+.about-photo__frame {
+  position: absolute;
+  inset: 12px;
+  border: 2px dashed rgba(139, 92, 246, 0.3);
+  border-radius: var(--r-xl);
+  pointer-events: none;
+  transform: translate(14px, 14px);
+  z-index: -1;
+}
+.about-photo__tag {
+  position: absolute;
+  top: var(--s-3);
+  left: var(--s-3);
+  background: var(--white);
+  border-radius: var(--r-pill);
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+  box-shadow: var(--sh-card);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.about-body__eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--purple); font-weight: 800; margin-bottom: var(--s-3); }
+.about-body__title { font-size: clamp(2rem, 3.8vw, 2.75rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: var(--s-3); }
+.about-body__lead { font-size: 1.05rem; color: var(--gray-700); line-height: 1.7; margin-bottom: var(--s-4); }
+.about-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-3); margin-bottom: var(--s-5); }
+.about-fact {
+  padding: var(--s-3) var(--s-4);
+  border-left: 3px solid var(--purple);
+  background: var(--cream);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.about-fact__num { font-size: 1.5rem; font-weight: 900; line-height: 1; margin-bottom: 4px; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.about-fact__label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-600); font-weight: 700; }
+
+/* ============================================
+   HERO PORTRAIT
+   ============================================ */
+.hero-portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  max-height: 480px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--deep), var(--purple));
+  box-shadow: var(--sh-glow-p);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.hero-portrait__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.hero-portrait__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--s-4);
+  background: linear-gradient(to top, rgba(10, 4, 24, 0.9), transparent);
+}
+.hero-portrait__name { font-family: var(--f-hand); font-size: 2.25rem; line-height: 1; color: var(--gold); }
+.hero-portrait__tag { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255, 255, 255, 0.8); font-weight: 800; }
+
+/* ============================================
+   COMMUNITY WALL
+   ============================================ */
+.wall {
+  position: relative;
+  max-width: 900px; margin: 0 auto;
+}
+.wall__grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: var(--s-2);
+}
+@media (max-width: 700px) { .wall__grid { grid-template-columns: repeat(6, 1fr); } }
+.wall__grid .avatar { width: 100%; }
+.wall__grid .avatar-img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--white);
+  box-shadow: var(--sh-card);
+  transition: transform 0.25s var(--ease);
+  display: block;
+}
+.wall__grid .avatar-img:hover { transform: scale(1.12); z-index: 2; box-shadow: var(--sh-lift); position: relative; }
+.wall__grid .avatar--more {
+  background: var(--grad-gold);
+  color: var(--ink);
+  font-size: 0.6rem;
+  line-height: 1.1;
+  text-align: center;
+}
+.wall__floater {
+  position: absolute;
+  background: var(--white);
+  border-radius: var(--r-md);
+  padding: 8px 14px;
+  box-shadow: var(--sh-float);
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 2px solid rgba(139, 92, 246, 0.15);
+}
+.wall__floater--top { top: -18px; left: 6%; transform: rotate(-3deg); }
+.wall__floater--bot { bottom: -18px; right: 6%; transform: rotate(3deg); background: var(--gold); border-color: var(--gold-dk); }
+@media (max-width: 700px) { .wall__floater { display: none; } }
+.wall__caption { text-align: center; margin-top: var(--s-5); font-size: 12px; color: var(--gray-400); font-style: italic; }
+
+/* ============================================
+   LEARN GRID
+   ============================================ */
+.learn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3); }
+@media (max-width: 900px) { .learn-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .learn-grid { grid-template-columns: 1fr; } }
+
+/* Topic pills */
+.topics { margin-top: var(--s-6); text-align: center; }
+.topics__label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); font-weight: 800; margin-bottom: var(--s-3); }
+.topics__grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 780px; margin: 0 auto; }
+.topic-pill {
+  padding: 6px 14px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.topic-pill--active { background: var(--grad); color: var(--white); border-color: transparent; }
+
+/* ============================================
+   WEBINAR SECTION
+   ============================================ */
+.webinar-card {
+  background: var(--grad);
+  color: var(--white);
+  border-radius: var(--r-xl);
+  padding: var(--s-6);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--s-6);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 900px) { .webinar-card { grid-template-columns: 1fr; padding: var(--s-5); } }
+.webinar-card__blob { position: absolute; top: -150px; right: -150px; width: 400px; height: 400px; background: var(--violet); opacity: 0.25; filter: blur(100px); border-radius: 50%; }
+.webinar-card__body { position: relative; z-index: 1; }
+.webinar-card__title { font-size: 2rem; font-weight: 900; line-height: 1.1; margin-bottom: var(--s-3); letter-spacing: -0.02em; }
+.webinar-card__lead { color: rgba(255, 255, 255, 0.85); margin-bottom: var(--s-4); line-height: 1.6; }
+.webinar-card__list { display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--s-4); }
+.webinar-card__list-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; }
+.check {
+  flex-shrink: 0; width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--grad-gold);
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-top: 2px;
+}
+.check svg { width: 10px; height: 10px; }
+
+.form-card {
+  background: var(--white);
+  color: var(--ink);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  box-shadow: var(--sh-float);
+  position: relative; z-index: 1;
+}
+.form-card__header { text-align: center; margin-bottom: var(--s-4); }
+.form-card__eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--purple); font-weight: 800; margin-bottom: 6px; }
+.form-card__title { font-size: 1.3rem; font-weight: 900; }
+.form-card__title b { color: var(--coral); }
+.form { display: flex; flex-direction: column; gap: 10px; }
+.input, .select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: var(--r-md);
+  border: 2px solid var(--gray-200);
+  font: inherit;
+  font-weight: 500;
+  transition: border-color 0.2s;
+  background: var(--white);
+}
+.input:focus, .select:focus { outline: none; border-color: var(--purple); }
+.form__submit {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--r-md);
+  background: var(--grad-gold);
+  color: var(--ink);
+  font-weight: 900;
+  font-size: 16px;
+  transition: transform 0.2s;
+  box-shadow: var(--sh-glow-g);
+}
+.form__submit:hover { transform: translateY(-2px); }
+.form__note { text-align: center; font-size: 11px; color: var(--gray-500); margin-top: 10px; }
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
+@media (max-width: 900px) { .testimonials { grid-template-columns: 1fr; } }
+.testimonial {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  position: relative;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.testimonial:hover { transform: translateY(-4px); box-shadow: var(--sh-lift); }
+.testimonial--featured { border: 2px solid var(--purple); box-shadow: var(--sh-lift); }
+.testimonial__stars { color: var(--gold); font-size: 14px; margin-bottom: var(--s-3); letter-spacing: 2px; }
+.testimonial__quote { color: var(--gray-700); line-height: 1.6; margin-bottom: var(--s-4); font-size: 0.95rem; }
+.testimonial__author { display: flex; align-items: center; gap: 12px; padding-top: var(--s-3); border-top: 1px solid var(--gray-100); }
+.testimonial__name { font-weight: 800; font-size: 14px; }
+.testimonial__role { font-size: 11px; color: var(--gray-500); margin-top: 2px; }
+.testimonial__tag {
+  position: absolute; top: -10px; left: var(--s-5);
+  background: var(--gold); color: var(--ink);
+  padding: 4px 12px; border-radius: var(--r-pill);
+  font-size: 10px; font-weight: 900; letter-spacing: 0.15em;
+}
+
+/* ============================================
+   PRICING
+   ============================================ */
+.pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); align-items: stretch; }
+@media (max-width: 900px) { .pricing { grid-template-columns: 1fr; } }
+.plan {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  display: flex; flex-direction: column;
+  transition: transform 0.3s var(--ease);
+}
+.plan:hover { transform: translateY(-4px); }
+.plan--featured {
+  background: var(--grad);
+  color: var(--white);
+  border: none;
+  position: relative;
+  transform: scale(1.05);
+  box-shadow: var(--sh-glow-p);
+  z-index: 1;
+}
+.plan--waitlist {
+  background: linear-gradient(180deg, var(--ink) 0%, var(--navy) 100%);
+  color: var(--white);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  position: relative;
+}
+@media (max-width: 900px) { .plan--featured { transform: none; } }
+.plan__flag {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  padding: 6px 16px;
+  border-radius: var(--r-pill);
+  font-size: 10px; font-weight: 900; letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+.plan__flag--gold { background: var(--gold); color: var(--ink); }
+.plan__flag--purple { background: var(--purple); color: var(--white); }
+.plan__label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 800; margin-bottom: var(--s-2); color: var(--purple); margin-top: 8px; }
+.plan--featured .plan__label { color: var(--gold); }
+.plan--waitlist .plan__label { color: var(--lilac); }
+.plan__title { font-size: 1.35rem; font-weight: 900; line-height: 1.2; margin-bottom: var(--s-3); letter-spacing: -0.02em; }
+.plan__price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+.plan__amount { font-size: 2.5rem; font-weight: 900; line-height: 1; letter-spacing: -0.03em; }
+.plan--featured .plan__amount { color: var(--gold); }
+.plan__strike { font-size: 0.95rem; text-decoration: line-through; color: var(--gray-400); }
+.plan--featured .plan__strike { color: rgba(255, 255, 255, 0.4); }
+.plan__cadence { font-size: 12px; color: var(--gray-500); margin-bottom: var(--s-4); }
+.plan--featured .plan__cadence { color: var(--lilac); }
+.plan--waitlist .plan__cadence { color: rgba(255, 255, 255, 0.6); }
+.plan__cta { margin-bottom: var(--s-4); }
+.plan__features { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.plan__feature { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.4; }
+.plan__tick { flex-shrink: 0; color: var(--purple); font-weight: 900; display: inline-flex; align-items: center; margin-top: 2px; }
+.plan--featured .plan__tick { color: var(--gold); }
+.plan--waitlist .plan__tick { color: var(--gold); }
+.plan__footer {
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  font-size: 11px;
+  color: var(--lilac);
+}
+
+/* ============================================
+   BONUSES
+   ============================================ */
+.bonuses { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-3); margin-bottom: var(--s-6); }
+@media (max-width: 700px) { .bonuses { grid-template-columns: 1fr; } }
+.bonus {
+  background: var(--white);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: var(--r-lg);
+  padding: var(--s-4);
+  position: relative;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.bonus:hover { transform: translateY(-3px); box-shadow: var(--sh-lift); }
+.bonus--wide { grid-column: span 2; }
+@media (max-width: 700px) { .bonus--wide { grid-column: span 1; } }
+.bonus__value {
+  position: absolute; top: 14px; right: 14px;
+  background: var(--gold); color: var(--ink);
+  padding: 4px 10px; border-radius: var(--r-pill);
+  font-size: 10px; font-weight: 900; letter-spacing: 0.1em;
+}
+.bonus__head { display: flex; align-items: flex-start; gap: var(--s-3); margin-bottom: 10px; }
+.bonus__icon {
+  width: 52px; height: 52px;
+  border-radius: var(--r-md);
+  background: var(--grad);
+  color: var(--white);
+  font-size: 24px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.bonus__label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--purple); font-weight: 800; margin-bottom: 4px; }
+.bonus__title { font-size: 1.05rem; font-weight: 900; line-height: 1.25; }
+.bonus__body { font-size: 0.85rem; color: var(--gray-600); line-height: 1.55; padding-left: 64px; }
+
+/* Value stack */
+.value-stack {
+  background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+  border: 2px solid rgba(251, 191, 36, 0.3);
+  border-radius: var(--r-xl);
+  padding: var(--s-6);
+  box-shadow: var(--sh-float);
+}
+.value-stack__label { text-align: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--purple); font-weight: 800; margin-bottom: var(--s-3); }
+.value-stack__table { max-width: 600px; margin: 0 auto var(--s-5); }
+.value-stack__row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--gray-200);
+  font-size: 14px;
+}
+.value-stack__row:last-child { border-bottom: none; }
+.value-stack__row--total { padding-top: var(--s-3); font-size: 1.1rem; font-weight: 900; }
+.value-stack__row--total span:last-child { text-decoration: line-through; color: var(--gray-400); }
+.value-stack__row--pay { font-size: 1.1rem; font-weight: 900; }
+.value-stack__row--pay span:last-child { font-size: 2rem; }
+.value-stack__footer { text-align: center; }
+@media (max-width: 600px) {
+  .value-stack__footer .btn { white-space: normal; width: 100%; line-height: 1.3; font-size: 15px; padding: 14px 20px; }
+}
+.value-stack__urgency { margin-top: var(--s-3); font-size: 12px; color: var(--gray-500); }
+.value-stack__urgency b { color: var(--coral); }
+
+/* ============================================
+   PROMISE
+   ============================================ */
+.promise {
+  max-width: 640px; margin: 0 auto;
+  background: linear-gradient(135deg, var(--cream), var(--white));
+  border: 2px solid rgba(139, 92, 246, 0.2);
+  border-radius: var(--r-xl);
+  padding: var(--s-6);
+  text-align: center;
+  box-shadow: var(--sh-float);
+}
+.promise__icon {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--grad);
+  color: var(--white);
+  font-size: 32px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--s-4);
+  box-shadow: var(--sh-glow-p);
+}
+.promise__title { font-size: 1.75rem; font-weight: 900; letter-spacing: -0.02em; margin-bottom: var(--s-3); }
+.promise__body { color: var(--gray-700); line-height: 1.6; max-width: 520px; margin: 0 auto; }
+
+/* ============================================
+   STEPS
+   ============================================ */
+.steps { display: flex; flex-direction: column; gap: var(--s-3); max-width: 820px; margin: 0 auto; }
+.step {
+  display: flex; align-items: flex-start; gap: var(--s-4);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--s-4);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.step:hover { transform: translateX(4px); box-shadow: var(--sh-lift); }
+.step--final { background: var(--grad); color: var(--white); border: none; }
+.step__num { font-size: 2.75rem; font-weight: 900; line-height: 1; letter-spacing: -0.04em; flex-shrink: 0; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.step--final .step__num { color: var(--gold); -webkit-text-fill-color: var(--gold); }
+.step__title { font-size: 1.15rem; font-weight: 900; margin-bottom: 4px; }
+.step__body { font-size: 0.9rem; color: var(--gray-600); line-height: 1.55; }
+.step--final .step__body { color: rgba(255, 255, 255, 0.85); }
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq { display: flex; flex-direction: column; gap: 10px; max-width: 720px; margin: 0 auto; }
+.faq-item {
+  background: var(--cream);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.faq-item:hover { background: var(--gray-100); }
+.faq-item summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item__plus {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--white);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--purple);
+  font-size: 1.1rem;
+  font-weight: 900;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.faq-item[open] .faq-item__plus { transform: rotate(45deg); background: var(--purple); color: var(--white); }
+.faq-item__body { margin-top: var(--s-3); color: var(--gray-700); line-height: 1.65; font-size: 0.95rem; }
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.final {
+  padding: var(--s-8) 0;
+  background: var(--grad);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.final__title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: var(--s-4); }
+.final__lead { font-size: 1.2rem; color: rgba(255, 255, 255, 0.85); max-width: 560px; margin: 0 auto var(--s-6); line-height: 1.6; }
+.final__ctas { display: flex; justify-content: center; flex-wrap: wrap; gap: var(--s-3); margin-bottom: var(--s-4); }
+.final__note { font-size: 13px; color: rgba(255, 255, 255, 0.7); }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.6);
+  padding: var(--s-5) 0;
+}
+.footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s-3); }
+.footer__sig { font-family: var(--f-hand); font-size: 1.75rem; line-height: 1; }
+.footer__links { display: flex; gap: var(--s-4); flex-wrap: wrap; }
+.footer__link { font-size: 13px; }
+.footer__link:hover { color: var(--white); }
+.footer__copy { font-size: 11px; }
+
+/* ============================================
+   STICKY CTA
+   ============================================ */
+.sticky-mobile {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+  background: var(--white);
+  border-top: 1px solid var(--gray-200);
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.08);
+}
+.sticky-mobile .btn { flex: 1; padding: 12px 16px; font-size: 13px; }
+@media (min-width: 900px) { .sticky-mobile { display: none; } }
+
+.float-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  display: none;
+}
+@media (min-width: 900px) { .float-cta { display: inline-flex; } }
+
+/* ============================================
+   ANNOUNCEMENT BAR
+   ============================================ */
+.announce {
+  background: var(--grad);
+  color: var(--white);
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.announce b { color: var(--gold); }
+.announce__inner { display: inline-flex; align-items: center; gap: 8px; }
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.float { animation: float 7s ease-in-out infinite; }
+
+@keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ICONS */
+.icon {
+  width: 1em; height: 1em;
+  display: inline-block;
+  vertical-align: -0.15em;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.icon--filled { fill: currentColor; stroke: none; }
+.icon--lg { width: 1.4em; height: 1.4em; }
+.icon--xl { width: 2em; height: 2em; }
+.icon--xxl { width: 2.5em; height: 2.5em; }
+</style>
+</head>
+<body>
+
+<!-- ICON SPRITE -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<defs>
+<symbol id="i-stethoscope" viewBox="0 0 24 24"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M6 3h2"/><path d="M12 3h2"/><path d="M10 13v3a5 5 0 0 0 10 0v-3"/><circle cx="20" cy="10" r="2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L19.8 10l-5.9 1.2L12 17l-1.9-5.8L4.2 10l5.9-1.2z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 22l-.9-2.8-2.4-.9 2.4-.9z"/></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+<symbol id="i-message" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+<symbol id="i-trending-up" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+<symbol id="i-trending-down" viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></symbol>
+<symbol id="i-rupee" viewBox="0 0 24 24"><path d="M6 3h12"/><path d="M6 8h12"/><path d="M6 13h3a4 4 0 0 0 4-4"/><path d="M6 13l8 8"/></symbol>
+<symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="3" y1="20" x2="21" y2="20"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+</defs>
+</svg>
+
+<!-- ANNOUNCE -->
+<div class="announce">
+  <span class="announce__inner">
+    <span class="live-dot"></span>
+    <b>LIVE</b> · Free Webinar: How Ethical Doctors Achieve 10x Growth (Without Being Part of the Money Pushy System)
+  </span>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="#" class="nav__logo">
+      <img src="nishu-signature.png" alt="Nishu" class="nav__sig-img fallback-sig" data-light="true"/>
+      <span class="nav__tag">Ethical Growth</span>
+    </a>
+    <div class="nav__links">
+      <a href="#mission" class="nav__link">Mission</a>
+      <a href="#learn" class="nav__link">System</a>
+      <a href="#community" class="nav__link">Community</a>
+      <a href="#about" class="nav__link">About Nishu</a>
+      <a href="#pricing" class="nav__link">Silver</a>
+      <a href="#faq" class="nav__link">FAQ</a>
+    </div>
+    <a href="#webinar" class="btn btn--primary">Join Free Webinar →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__blob" style="width: 600px; height: 600px; background: var(--purple); top: -200px; right: -200px;"></div>
+  <div class="hero__blob" style="width: 500px; height: 500px; background: var(--violet); bottom: -200px; left: -200px;"></div>
+
+  <div class="container">
+    <div class="hero__grid">
+      <!-- Left -->
+      <div>
+        <span class="hero__eyebrow"><svg class="icon"><use href="#i-stethoscope"/></svg> For Ethical Doctors · Clinics · Hospitals</span>
+        <h1 class="hero__title">
+          Grow Your Ethical Healthcare Practice <span class="gt-gold">10x in 90 Days</span>
+          <span class="hero__title-sub">without pushy marketing or manipulation.</span>
+        </h1>
+        <p class="hero__lead">
+          Join <b style="color:#fff">100+ ethical doctors</b> scaling revenue, patient flow & authority using systems built on integrity. <b style="color:var(--gold)">Zero sleaze. Zero compromise.</b>
+        </p>
+
+        <div class="hero__bonus-teaser">
+          <svg class="icon icon--lg" style="color:var(--gold)"><use href="#i-gift"/></svg> <b>₹1,50,000+ worth of bonuses</b> · unlocked on Silver signup
+        </div>
+
+        <div class="hero__ctas">
+          <a href="#webinar" class="btn btn--gold btn--lg">
+            <svg class="icon"><use href="#i-play"/></svg> Join My Free Webinar
+            <span class="btn__tag">LIVE</span>
+          </a>
+          <a href="#pricing" class="btn btn--ghost-light btn--lg">See Silver Membership</a>
+        </div>
+
+        <div class="hero__trust">
+          <div class="hero__trust-stack">
+            <div class="avatar avatar--md avatar--medical" data-hue="1" title="Dr. Sharma">SH</div>
+            <div class="avatar avatar--md avatar--medical" data-hue="2" title="Dr. Patel">PT</div>
+            <div class="avatar avatar--md avatar--medical" data-hue="3" title="Dr. Reddy">RD</div>
+            <div class="avatar avatar--md avatar--medical" data-hue="6">+97</div>
+          </div>
+          <div class="hero__trust-meta">
+            <div class="stars stars-5"><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg> <span style="color:rgba(255,255,255,0.6);font-size:11px;margin-left:4px">5.0 · 50+ reviews</span></div>
+            <div>100+ ethical doctors · 15+ years experience</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO: Portrait + Webinar -->
+      <div style="display:flex; flex-direction:column; gap:var(--s-3)">
+        <div class="hero-portrait float">
+          <img src="nishu-seated.jpg" alt="Nishu, Ethical Healthcare Coach" class="hero-portrait__img fallback-portrait" data-label="Nishu"/>
+          <div class="hero-portrait__overlay">
+            <img src="nishu-signature.png" alt="Nishu" class="hero-portrait__name-img fallback-sig"/>
+            <div class="hero-portrait__tag" style="margin-top:4px">Ethical Healthcare Coach · 15+ yrs</div>
+          </div>
+        </div>
+
+        <div class="vsl">
+          <div class="vsl__label" style="margin-top:0">Free 60 Min Webinar</div>
+          <div class="vsl__title">How Ethical Doctors Achieve 10x Growth (Without Being Part of the Money Pushy System)</div>
+          <div class="vsl__meta">
+            <div class="vsl__meta-item" style="grid-column: span 2">
+              <div class="vsl__meta-label">When</div>
+              <div class="vsl__meta-val">Once you register, you'll get the Zoom link</div>
+            </div>
+          </div>
+          <a href="#webinar" class="btn btn--gold" style="width:100%"><svg class="icon"><use href="#i-play"/></svg> Reserve Free Seat →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat"><div class="stat__num">10x</div><div class="stat__label">Growth Framework</div></div>
+      <div class="stat"><div class="stat__num">35+</div><div class="stat__label">Self Paced Courses</div></div>
+      <div class="stat"><div class="stat__num">100+</div><div class="stat__label">Doctors Transformed</div></div>
+      <div class="stat"><div class="stat__num">15+ yrs</div><div class="stat__label">Experience</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CITIES MARQUEE -->
+<section class="marquee-section">
+  <div class="container">
+    <div class="marquee-label">Trusted by ethical practices in</div>
+    <div class="marquee">
+      <div class="marquee__track">
+        <span class="marquee__item">Delhi</span><span class="marquee__item">Mumbai</span><span class="marquee__item">Bangalore</span><span class="marquee__item">Singapore</span><span class="marquee__item">Hyderabad</span><span class="marquee__item">Chennai</span><span class="marquee__item">Romania</span><span class="marquee__item">Kolkata</span><span class="marquee__item">Pune</span><span class="marquee__item">Dubai</span><span class="marquee__item">Ahmedabad</span><span class="marquee__item">London</span>
+        <span class="marquee__item">Delhi</span><span class="marquee__item">Mumbai</span><span class="marquee__item">Bangalore</span><span class="marquee__item">Singapore</span><span class="marquee__item">Hyderabad</span><span class="marquee__item">Chennai</span><span class="marquee__item">Romania</span><span class="marquee__item">Kolkata</span><span class="marquee__item">Pune</span><span class="marquee__item">Dubai</span><span class="marquee__item">Ahmedabad</span><span class="marquee__item">London</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section section--cream">
+  <div class="container-sm">
+    <div class="section__header">
+      <span class="section__eyebrow" style="background:rgba(239,68,68,0.1);color:var(--coral)">The Brutal Truth</span>
+      <h2 class="section__title">The Best Doctors Are <span style="color:var(--coral)">Invisible</span>.<br/>The Pushy Ones Are <span style="color:var(--coral)">Winning</span>.</h2>
+      <p class="section__lead">You became a doctor to <b style="color:var(--navy)">heal</b>. Not to run ads, chase leads, or compete with clinics that treat healthcare like a sales funnel.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card"><div class="problem-card__emoji" style="color:var(--coral)"><svg class="icon icon--xxl"><use href="#i-trending-down"/></svg></div><div class="problem-card__title">Unpredictable Patient Flow</div><div class="problem-card__body">Some months great, most silent. You never know what's coming next.</div></div>
+      <div class="problem-card"><div class="problem-card__emoji" style="color:var(--coral)"><svg class="icon icon--xxl"><use href="#i-trending-up"/></svg></div><div class="problem-card__title">Rising Acquisition Costs</div><div class="problem-card__body">Funded clinics flood ads. Your cost per patient keeps climbing.</div></div>
+      <div class="problem-card"><div class="problem-card__emoji" style="color:var(--coral)"><svg class="icon icon--xxl"><use href="#i-eye-off"/></svg></div><div class="problem-card__title">Invisible to Ideal Patients</div><div class="problem-card__body">You do great work. But no one hears about it.</div></div>
+      <div class="problem-card"><div class="problem-card__emoji" style="color:var(--coral)"><svg class="icon icon--xxl"><use href="#i-scale"/></svg></div><div class="problem-card__title">Integrity vs. Growth Tension</div><div class="problem-card__body">You refuse to cross ethical lines, and watch others grow doing exactly that.</div></div>
+    </div>
+
+    <p class="problem__kicker">You don't have a skill problem. <span class="gt">You have a <u>system</u> problem.</span></p>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="mission" class="section section--dark">
+  <div class="hero__blob" style="width: 500px; height: 500px; background: var(--violet); top: 20%; right: -150px;"></div>
+  <div class="hero__blob" style="width: 400px; height: 400px; background: var(--purple); bottom: -100px; left: -100px;"></div>
+
+  <div class="container" style="position:relative;z-index:1">
+
+    <div class="mission-grid">
+      <div class="mission-photo">
+        <img src="nishu-headshot.jpg" alt="Nishu, Ethical Healthcare Coach" class="mission-photo__img fallback-portrait" data-label="Nishu"/>
+        <div class="mission-photo__badge">
+          <svg class="icon icon--lg" style="color:var(--gold)"><use href="#i-award"/></svg>
+          <div>
+            <div class="mission-photo__badge-num">15+ yrs</div>
+            <div class="mission-photo__badge-label">Healthcare · Growth</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mission-body">
+        <span class="section__eyebrow">My Mission</span>
+        <h2 class="section__title" style="text-align:left">Train <span class="gt-gold">1 Lakh Ethical Doctors</span> to Grow Without Compromising Values.</h2>
+        <p class="mission-body__lead">Healthcare is broken. Money pushy systems win while ethical doctors stay invisible. I'm here to flip that. One doctor, one clinic, one hospital at a time.</p>
+
+        <div class="mission-pillars-v">
+          <div class="mission-pillar-row">
+            <div class="mission-pillar-row__num">01</div>
+            <div>
+              <div class="mission-pillar-row__title">Make Ethical Doctors Visible</div>
+              <div class="mission-pillar-row__body">Give the best doctors the authority, positioning and platform they deserve.</div>
+            </div>
+          </div>
+          <div class="mission-pillar-row">
+            <div class="mission-pillar-row__num">02</div>
+            <div>
+              <div class="mission-pillar-row__title">Build Trust First Systems</div>
+              <div class="mission-pillar-row__body">Replace pushy tactics with frameworks that attract ideal patients through integrity.</div>
+            </div>
+          </div>
+          <div class="mission-pillar-row">
+            <div class="mission-pillar-row__num">03</div>
+            <div>
+              <div class="mission-pillar-row__title">Change Healthcare Itself</div>
+              <div class="mission-pillar-row__body">When ethical doctors win, patients win. That's the system we're building.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mission-signoff">
+          <p class="mission-signoff__text">"Integrity isn't a growth limit. It's the growth <u>lever</u> nobody's using. Let me show you how."</p>
+          <img src="nishu-signature.png" alt="Nishu" class="mission-signoff__sig-img fallback-sig"/>
+          <div class="mission-signoff__name">Ethical Healthcare Coach</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY WALL -->
+<section id="community" class="section">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow"><span class="live-dot"></span>&nbsp;The Community</span>
+      <h2 class="section__title">100+ Ethical Doctors. <span class="gt">One Movement.</span></h2>
+      <p class="section__lead">From solo practitioners to hospital owners. Everyone here is committed to growing with integrity.</p>
+    </div>
+
+    <div class="wall">
+      <div class="wall__floater wall__floater--top"><span class="live-dot"></span>3 new doctors joined today</div>
+
+      <div class="wall__grid" id="wall-grid">
+        <!-- Populated by JS with DiceBear persona SVGs -->
+        <div class="avatar avatar--more"><span>+60<br/>MORE</span></div>
+      </div>
+
+      <div class="wall__floater wall__floater--bot"><svg class="icon"><use href="#i-trophy"/></svg> 10x Growth Champions · 12 members</div>
+    </div>
+
+    <p class="wall__caption">Doctors from Delhi, Mumbai, Bangalore, Singapore, Dubai, Romania and beyond.</p>
+  </div>
+</section>
+
+<!-- LEARN -->
+<section id="learn" class="section section--cream">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow">The System</span>
+      <h2 class="section__title">What You'll Learn Inside</h2>
+      <p class="section__lead">The exact frameworks that took our doctors from unpredictable revenue to 10x growth, ethically.</p>
+    </div>
+
+    <div class="learn-grid">
+      <div class="card"><div class="card__icon"><svg class="icon icon--lg"><use href="#i-trending-up"/></svg></div><div class="card__title">Fix Unpredictable Patient Flow</div><div class="card__body">Build a predictable pipeline that fills your calendar every month. No guesswork.</div></div>
+      <div class="card"><div class="card__icon"><svg class="icon icon--lg"><use href="#i-heart"/></svg></div><div class="card__title">Heal Without Pushy Selling</div><div class="card__body">Conversion frameworks that feel like care, not sales, because they are.</div></div>
+      <div class="card"><div class="card__icon"><svg class="icon icon--lg"><use href="#i-sparkles"/></svg></div><div class="card__title">Attract Quality Patients with AI</div><div class="card__body">Use AI and automation to reach your ideal patient. Filter out the rest.</div></div>
+      <div class="card"><div class="card__icon"><svg class="icon icon--lg"><use href="#i-award"/></svg></div><div class="card__title">Become the Trusted Authority</div><div class="card__body">Positioning framework so patients choose you first. Before they even call.</div></div>
+      <div class="card"><div class="card__icon"><svg class="icon icon--lg"><use href="#i-map"/></svg></div><div class="card__title">The Exact 90 Day Plan</div><div class="card__body">Step by step roadmap to 7 figure revenue, ethically and sustainably.</div></div>
+      <div class="card"><div class="card__icon"><svg class="icon icon--lg"><use href="#i-chart"/></svg></div><div class="card__title">Predictable Revenue, Zero Panic</div><div class="card__body">Revenue Architecture system. No more "some months great, some silent."</div></div>
+    </div>
+
+    <div class="topics">
+      <div class="topics__label">+ 16 full topic tracks</div>
+      <div class="topics__grid">
+        <span class="topic-pill">Ethical Growth</span>
+        <span class="topic-pill">Authority Positioning</span>
+        <span class="topic-pill">Brand Building</span>
+        <span class="topic-pill">Revenue Foundations</span>
+        <span class="topic-pill">YouTube Growth</span>
+        <span class="topic-pill">Sales Systems</span>
+        <span class="topic-pill">AI Systems</span>
+        <span class="topic-pill">Team Building</span>
+        <span class="topic-pill">Organic Marketing</span>
+        <span class="topic-pill">Leadership</span>
+        <span class="topic-pill">Paid Advertising</span>
+        <span class="topic-pill">Content Creation</span>
+        <span class="topic-pill">Lead Generation</span>
+        <span class="topic-pill">Community Building</span>
+        <span class="topic-pill">Patient Conversion</span>
+        <span class="topic-pill topic-pill--active">AI Agents</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEBINAR -->
+<section id="webinar" class="section">
+  <div class="container">
+    <div class="webinar-card">
+      <div class="webinar-card__blob"></div>
+      <div class="webinar-card__body">
+        <span class="badge badge--live" style="margin-bottom: var(--s-4)"><span class="live-dot"></span>Free · Live · 60 Min</span>
+        <h2 class="webinar-card__title">Join My <span class="gt-gold">Free Live Webinar</span></h2>
+        <p class="webinar-card__lead">I'll walk you through the exact 90 day ethical growth system, live. Ask me anything. Leave with a plan.</p>
+        <ul class="webinar-card__list">
+          <li class="webinar-card__list-item"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#0a0418" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>How to predict patient flow in 30 days</li>
+          <li class="webinar-card__list-item"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#0a0418" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>The 3 ethical marketing levers that work today</li>
+          <li class="webinar-card__list-item"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#0a0418" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>Live Q&A, bring your hardest question</li>
+          <li class="webinar-card__list-item"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#0a0418" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>BONUS: Attendees get exclusive Silver discount</li>
+        </ul>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card__header">
+          <div class="form-card__eyebrow">Reserve Your Free Seat</div>
+          <div class="form-card__title">Only <b>47 seats</b> left</div>
+        </div>
+        <form class="form" accept-charset='UTF-8' action='https://app.formester.com/forms/DfkyxGli5/submissions' method='POST'>
+          <input type="text" name="full_name" placeholder="Full Name" class="input" required>
+          <input type="email" name="email" placeholder="Email Address" class="input" required>
+          <input type="tel" name="whatsapp_number" placeholder="WhatsApp Number" class="input" required>
+          <select name="role" class="select" required>
+            <option value="">I am a…</option>
+            <option value="Doctor / Solo Practitioner">Doctor / Solo Practitioner</option>
+            <option value="Clinic Owner">Clinic Owner</option>
+            <option value="Hospital Owner">Hospital Owner</option>
+            <option value="Healthcare Startup Founder">Healthcare Startup Founder</option>
+            <option value="Other Healthcare Professional">Other Healthcare Professional</option>
+          </select>
+          <button type="submit" class="form__submit">Reserve Free Seat →</button>
+        </form>
+        <div class="form__note"><svg class="icon"><use href="#i-lock"/></svg> No spam. Ever. · <svg class="icon"><use href="#i-mail"/></svg> Zoom link sent instantly</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="proof" class="section section--cream">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow">Real Results</span>
+      <h2 class="section__title">Trusted by Ethical Healthcare Leaders</h2>
+    </div>
+
+    <div class="testimonials">
+      <div class="testimonial">
+        <div class="testimonial__stars stars-5"><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg></div>
+        <p class="testimonial__quote">"After 18 years in practice, I realized clinical excellence alone isn't enough. <b>Visibility matters</b>. For the first time, growth didn't feel like guesswork. This is the change healthcare truly needs."</p>
+        <div class="testimonial__author">
+          <div class="avatar avatar--lg" data-hue="1">PS</div>
+          <div><div class="testimonial__name">Dr. P L Suresh</div><div class="testimonial__role">Maxillofacial Surgeon, India</div></div>
+        </div>
+      </div>
+      <div class="testimonial testimonial--featured">
+        <div class="testimonial__tag"><svg class="icon icon--filled"><use href="#i-star"/></svg> Featured</div>
+        <div class="testimonial__stars stars-5"><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg></div>
+        <p class="testimonial__quote">"Nishu is a <b>world-class trainer</b>. She communicates complex ideas with absolute clarity and conviction. A leader with vision and impact."</p>
+        <div class="testimonial__author">
+          <div class="avatar avatar--lg" data-hue="4">KY</div>
+          <div><div class="testimonial__name">Ke Siong Yeo</div><div class="testimonial__role">Bright Vision Hospital, Singapore</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars stars-5"><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg><svg class="icon icon--filled"><use href="#i-star"/></svg></div>
+        <p class="testimonial__quote">"Money is important, but it should never become the most important thing. I discovered an <b>ethical way</b> of attracting patients that aligns with my values and still creates real growth."</p>
+        <div class="testimonial__author">
+          <div class="avatar avatar--lg" data-hue="3">EV</div>
+          <div><div class="testimonial__name">Evelin Voigt</div><div class="testimonial__role">Purpose-Driven Leader, Romania</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT NISHU -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-body">
+        <div class="about-body__eyebrow">Meet Your Coach</div>
+        <h2 class="about-body__title">Hi, I'm <span class="gt">Nishu</span>. I'm Here to Rewrite Healthcare.</h2>
+        <p class="about-body__lead">For 15+ years I've lived inside healthcare and digital growth. I've seen two kinds of practices: ones that manipulate patients for margin, and ones that heal with integrity but stay invisible. I built this system for the second kind.</p>
+        <p class="about-body__lead">My promise: if you commit to the work, I'll show you how to grow 10x without compromising a single value. No pushy ads. No sleazy funnels. Just trust, systems, and ethics at scale.</p>
+
+        <div class="about-facts">
+          <div class="about-fact"><div class="about-fact__num">15+ yrs</div><div class="about-fact__label">Healthcare + Growth</div></div>
+          <div class="about-fact"><div class="about-fact__num">100+</div><div class="about-fact__label">Doctors Trained</div></div>
+          <div class="about-fact"><div class="about-fact__num">50+</div><div class="about-fact__label">Success Stories</div></div>
+          <div class="about-fact"><div class="about-fact__num">1 Lakh</div><div class="about-fact__label">Mission Target</div></div>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
+          <a href="#webinar" class="btn btn--primary"><svg class="icon"><use href="#i-play"/></svg> Join Free Webinar</a>
+          <a href="#pricing" class="btn btn--ghost">See Silver →</a>
+        </div>
+      </div>
+
+      <div class="about-photo">
+        <div class="about-photo__frame"></div>
+        <img src="nishu-full.jpg" alt="Nishu" class="about-photo__img fallback-portrait" data-label="Nishu" data-light="true"/>
+        <span class="about-photo__tag"><svg class="icon"><use href="#i-award"/></svg> Ethical Healthcare Coach</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow">Start Your Ethical Growth</span>
+      <h2 class="section__title">One Membership. <span class="gt">Lifetime Transformation.</span></h2>
+      <p class="section__lead">Silver is where ethical doctors begin. Gold scales. Diamond is waitlist only.</p>
+    </div>
+
+    <div class="pricing">
+      <!-- GOLD -->
+      <div class="plan" style="order: 1">
+        <div class="plan__label">Gold</div>
+        <div class="plan__title">Advanced Growth Systems</div>
+        <div class="plan__price"><span class="plan__amount">₹19,999</span></div>
+        <div class="plan__cadence">One Time · Lifetime Access</div>
+        <a href="#" class="btn btn--ghost plan__cta">Upgrade to Gold →</a>
+        <ul class="plan__features">
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Everything in Silver</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>10x Growth Acceleration Path</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Advanced Patient Acquisition</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Meta Ads and Paid Growth</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>SEO and YouTube Authority</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Patient Conversion Frameworks</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>AI Based Marketing</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>High Quality Patient Funnels</li>
+        </ul>
+      </div>
+
+      <!-- SILVER FEATURED -->
+      <div class="plan plan--featured" style="order: 0">
+        <div class="plan__flag plan__flag--gold"><svg class="icon icon--filled"><use href="#i-star"/></svg> Most Popular · Best Value</div>
+        <div class="plan__label">Silver Membership</div>
+        <div class="plan__title">Start Growing Ethically</div>
+        <div class="plan__price">
+          <span class="plan__amount">₹4,999</span>
+          <span class="plan__strike">₹14,999</span>
+        </div>
+        <div class="plan__cadence">One Time · Lifetime · Save ₹10,000</div>
+        <a href="#" class="btn btn--gold plan__cta"><svg class="icon"><use href="#i-stethoscope"/></svg> Claim Silver Now →</a>
+        <ul class="plan__features">
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span><b>3 Day Growth Starter</b> Course</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span><b>11 Growth Courses</b> step by step</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Ethical Patient Acquisition System</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Content + Authority Building</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Lead Generation Basics</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Monthly Growth Hackathon</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Weekly Inner Circle Calls</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span><svg class="icon" style="margin-right:4px"><use href="#i-award"/></svg>Ethical Certification Badge</li>
+        </ul>
+        <div class="plan__footer"><svg class="icon"><use href="#i-lock"/></svg> Secure · <svg class="icon"><use href="#i-shield-check"/></svg> Lifetime · <svg class="icon"><use href="#i-target"/></svg> 5 min signup</div>
+      </div>
+
+      <!-- DIAMOND WAITLIST -->
+      <div class="plan plan--waitlist" style="order: 2">
+        <div class="plan__flag plan__flag--purple"><svg class="icon"><use href="#i-lock"/></svg> Waitlist Only</div>
+        <div class="plan__label">Diamond</div>
+        <div class="plan__title">Elite Scale · By Invitation</div>
+        <div class="plan__price">
+          <span class="plan__strike" style="font-size:1.1rem">₹49,999</span>
+          <span class="badge" style="background:rgba(255,255,255,0.1);color:var(--lilac)">APPLY</span>
+        </div>
+        <div class="plan__cadence">Limited seats · Curated cohort</div>
+        <a href="#" class="btn plan__cta" style="background:transparent;border:2px solid var(--gold);color:var(--gold)">Join Waitlist →</a>
+        <ul class="plan__features">
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Everything in Gold</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>AI-Powered Growth Automation</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Weekly Leadership Council</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>1:1 Implementation Tracking</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>Personal Brand Domination</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>MDpedia Directory Profile</li>
+          <li class="plan__feature"><span class="plan__tick"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg></span>20 Premium AI Tools (1 Yr)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUSES -->
+<section class="section section--cream">
+  <div class="container-sm">
+    <div class="section__header">
+      <span class="badge badge--gold" style="margin-bottom: var(--s-3)"><svg class="icon"><use href="#i-gift"/></svg> Bonus Stack · Silver Members Only</span>
+      <h2 class="section__title">Get <span class="gt">₹1,50,000+</span> in Bonuses<br/>When You Join Silver Today</h2>
+      <p class="section__lead">Limited time. Pay ₹4,999. Get everything below FREE.</p>
+    </div>
+
+    <div class="bonuses">
+      <div class="bonus">
+        <div class="bonus__value">Value ₹30,000</div>
+        <div class="bonus__head">
+          <div class="bonus__icon"><svg class="icon icon--lg"><use href="#i-users"/></svg></div>
+          <div>
+            <div class="bonus__label">Bonus #1</div>
+            <div class="bonus__title">Free Ethical Healthcare Community Access</div>
+          </div>
+        </div>
+        <p class="bonus__body">Lifetime access to VIP community of 100+ ethical doctors. Share wins, ask questions, build friendships.</p>
+      </div>
+
+      <div class="bonus">
+        <div class="bonus__value">Value ₹60,000</div>
+        <div class="bonus__head">
+          <div class="bonus__icon"><svg class="icon icon--lg"><use href="#i-sparkles"/></svg></div>
+          <div>
+            <div class="bonus__label">Bonus #2</div>
+            <div class="bonus__title">20 AI Tools Built for Healthcare</div>
+          </div>
+        </div>
+        <p class="bonus__body">Custom AI tools for patient intake, content, appointment reminders, SEO, review responses. Built for doctors.</p>
+      </div>
+
+      <div class="bonus">
+        <div class="bonus__value">Value ₹25,000</div>
+        <div class="bonus__head">
+          <div class="bonus__icon"><svg class="icon icon--lg"><use href="#i-file-text"/></svg></div>
+          <div>
+            <div class="bonus__label">Bonus #3</div>
+            <div class="bonus__title">50+ Patient Conversion Scripts</div>
+          </div>
+        </div>
+        <p class="bonus__body">Consultation scripts, follow ups, front desk templates, WhatsApp. Every word ethical and patient first.</p>
+      </div>
+
+      <div class="bonus">
+        <div class="bonus__value">Value ₹20,000</div>
+        <div class="bonus__head">
+          <div class="bonus__icon"><svg class="icon icon--lg"><use href="#i-message"/></svg></div>
+          <div>
+            <div class="bonus__label">Bonus #4</div>
+            <div class="bonus__title">Private WhatsApp Mastermind</div>
+          </div>
+        </div>
+        <p class="bonus__body">24/7 access to ethical doctor peers. Ask anything. Get answers in minutes. Real support, daily.</p>
+      </div>
+
+      <div class="bonus bonus--wide">
+        <div class="bonus__value">Value ₹15,000</div>
+        <div class="bonus__head">
+          <div class="bonus__icon"><svg class="icon icon--lg"><use href="#i-mic"/></svg></div>
+          <div>
+            <div class="bonus__label">Bonus #5</div>
+            <div class="bonus__title">Monthly Live Q&A with Nishu</div>
+          </div>
+        </div>
+        <p class="bonus__body">Bring your toughest growth problem. I answer live, personally. Every month. For life.</p>
+      </div>
+    </div>
+
+    <div class="value-stack">
+      <div class="value-stack__label">Total Value Breakdown</div>
+      <div class="value-stack__table">
+        <div class="value-stack__row"><span>Silver Membership (35+ courses, lifetime)</span><span style="font-weight:700">₹14,999</span></div>
+        <div class="value-stack__row"><span>Bonus #1 · Ethical Healthcare Community</span><span style="font-weight:700">₹30,000</span></div>
+        <div class="value-stack__row"><span>Bonus #2 · 20 Healthcare AI Tools</span><span style="font-weight:700">₹60,000</span></div>
+        <div class="value-stack__row"><span>Bonus #3 · Patient Scripts Library</span><span style="font-weight:700">₹25,000</span></div>
+        <div class="value-stack__row"><span>Bonus #4 · WhatsApp Mastermind</span><span style="font-weight:700">₹20,000</span></div>
+        <div class="value-stack__row"><span>Bonus #5 · Monthly Live Q&A</span><span style="font-weight:700">₹15,000</span></div>
+        <div class="value-stack__row value-stack__row--total"><span>Total Value</span><span>₹1,64,999</span></div>
+        <div class="value-stack__row value-stack__row--pay"><span>You Pay Today</span><span class="gt">₹4,999</span></div>
+      </div>
+
+      <div class="value-stack__footer">
+        <a href="#" class="btn btn--gold btn--lg"><svg class="icon"><use href="#i-stethoscope"/></svg> Claim Silver + All 5 Bonuses →</a>
+        <div class="value-stack__urgency"><svg class="icon"><use href="#i-clock"/></svg> Bonus stack available for next <b>72 hours only</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="section">
+  <div class="container-sm">
+    <div class="promise">
+      <div class="promise__icon"><svg class="icon icon--lg"><use href="#i-shield-check"/></svg></div>
+      <h3 class="promise__title">Our Ethical Promise to You</h3>
+      <p class="promise__body">We only work with <b>ethical healthcare providers</b>. If you're here to manipulate patients, this isn't for you. If you're here to heal more people and grow with integrity, <span class="gt" style="font-weight:900">you're exactly who we built this for.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">5 Steps to <span class="gt">10x Growth Ethically</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step__num">01</div><div><div class="step__title">Join Silver Membership</div><div class="step__body">Lifetime access to courses, frameworks, and bonuses for ₹4,999 one time.</div></div></div>
+      <div class="step"><div class="step__num">02</div><div><div class="step__title">Start the 3 Day Growth Starter</div><div class="step__body">Follow the step by step ethical patient acquisition system. Action from Day 1.</div></div></div>
+      <div class="step"><div class="step__num">03</div><div><div class="step__title">Implement the 90 Day Plan</div><div class="step__body">Weekly Inner Circle calls and Monthly Hackathons keep you on track.</div></div></div>
+      <div class="step"><div class="step__num">04</div><div><div class="step__title">Grow Ethically, Visibly</div><div class="step__body">Patients come to you. Revenue becomes predictable. Integrity stays intact.</div></div></div>
+      <div class="step step--final"><div class="step__num">05</div><div><div class="step__title">Achieve 10x Growth</div><div class="step__body">Upgrade to Gold or apply for Diamond when ready. Your ethical practice, amplified.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__eyebrow">Questions?</span>
+      <h2 class="section__title">Frequently Asked</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>What makes this different from regular healthcare marketing?<span class="faq-item__plus">+</span></summary>
+        <p class="faq-item__body">Most healthcare marketing optimizes for volume. Push ads, pressure patients. We optimize for <b>trust at scale</b>. You become the doctor patients choose first, without compromising integrity or clinical excellence.</p>
+      </details>
+      <details class="faq-item">
+        <summary>I'm not tech-savvy. Will I be able to use the tools?<span class="faq-item__plus">+</span></summary>
+        <p class="faq-item__body">Yes. Silver is built for doctors, not marketers. Every step has templates, scripts, and done-with-you walkthroughs. If you can send a WhatsApp message, you can use this.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How quickly will I see results?<span class="faq-item__plus">+</span></summary>
+        <p class="faq-item__body">Visibility changes in weeks. Meaningful patient flow shifts by Day 30. The 90 day roadmap is designed for measurable revenue growth by month 3.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is Silver only for private practices?<span class="faq-item__plus">+</span></summary>
+        <p class="faq-item__body">No. Silver works for solo doctors, clinics, and hospitals. Frameworks scale whether you're one practitioner or a 100-bed hospital.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's the difference between Silver, Gold, and Diamond?<span class="faq-item__plus">+</span></summary>
+        <p class="faq-item__body"><b>Silver</b> = foundation (₹4,999 lifetime). <b>Gold</b> = advanced paid growth + AI (₹19,999 lifetime). <b>Diamond</b> = elite cohort, invite-only, waitlist-based. Most doctors start Silver and scale up.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I get the bonuses?<span class="faq-item__plus">+</span></summary>
+        <p class="faq-item__body">All 5 bonuses (₹1,50,000+ value) unlock instantly when you join Silver, for a limited time. Check email within 5 min of signup.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I'm running unethical marketing now? Can I still join?<span class="faq-item__plus">+</span></summary>
+        <p class="faq-item__body">If you're <i>ready</i> to transition, yes, welcome. We don't judge the starting point, only the direction. If you have no intention to change, this isn't for you, and that's okay.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="hero__blob" style="width: 600px; height: 600px; background: var(--violet); top: -200px; left: -200px;"></div>
+  <div class="hero__blob" style="width: 500px; height: 500px; background: var(--purple); bottom: -200px; right: -200px;"></div>
+
+  <div class="container-sm" style="position:relative; z-index:1">
+    <span class="badge badge--live" style="margin-bottom: var(--s-4)"><svg class="icon"><use href="#i-clock"/></svg> Don't Miss This</span>
+    <h2 class="final__title">Join the <span class="gt-gold">#1 Ethical Healthcare</span> Movement</h2>
+    <p class="final__lead">Start with my free webinar. Join Silver when you're ready. Transform your practice with integrity intact.</p>
+    <div class="final__ctas">
+      <a href="#webinar" class="btn btn--gold btn--lg"><svg class="icon"><use href="#i-play"/></svg> Join Free Webinar</a>
+      <a href="#pricing" class="btn btn--ghost-light btn--lg">Claim Silver ₹4,999 →</a>
+    </div>
+    <div class="final__note"><svg class="icon"><use href="#i-lock"/></svg> Secure · <svg class="icon"><use href="#i-shield-check"/></svg> Lifetime · <svg class="icon"><use href="#i-target"/></svg> Join 100+ ethical doctors</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="nishu-signature.png" alt="Nishu" class="footer__sig-img fallback-sig"/>
+      <span style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:800">Ethical Healthcare Coach</span>
+    </div>
+    <div class="footer__links">
+      <a href="#" class="footer__link">Memberships</a>
+      <a href="#" class="footer__link">Privacy</a>
+      <a href="#" class="footer__link">Refund Policy</a>
+      <a href="#" class="footer__link">Terms</a>
+    </div>
+    <div class="footer__copy">© 2026 All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-mobile">
+  <a href="#webinar" class="btn btn--primary"><svg class="icon"><use href="#i-play"/></svg> Webinar</a>
+  <a href="#pricing" class="btn btn--gold"><svg class="icon"><use href="#i-stethoscope"/></svg> Silver ₹4,999</a>
+</div>
+
+<!-- Floating desktop CTA -->
+<a href="#webinar" class="btn btn--gold float-cta"><svg class="icon"><use href="#i-play"/></svg> Free Webinar</a>
+
+<!-- Community wall populator -->
+<script>
+(function(){
+  var doctors = [
+    {n:'Sharma',t:'Cardiologist'},{n:'Patel',t:'Dentist'},{n:'Kumar',t:'Surgeon'},
+    {n:'Gupta',t:'Pediatrician'},{n:'Reddy',t:'Orthopedic'},{n:'Iyer',t:'Gynecologist'},
+    {n:'Singh',t:'Dermatologist'},{n:'Rao',t:'Neurologist'},{n:'Mehta',t:'ENT'},
+    {n:'Yeo',t:'Singapore'},{n:'Jain',t:'Physician'},{n:'Desai',t:'Ophthalmologist'},
+    {n:'Verma',t:'Psychiatrist'},{n:'Nair',t:'Radiologist'},{n:'Khan',t:'Oncologist'},
+    {n:'Agarwal',t:'Clinic Owner'},{n:'Chopra',t:'Hospital Director'},{n:'Kapoor',t:'Endocrinologist'},
+    {n:'Voigt',t:'Romania'},{n:'Bose',t:'Urologist'},{n:'Das',t:'Pulmonologist'},
+    {n:'Chatterjee',t:'Surgeon'},{n:'Menon',t:'Pediatrician'},{n:'Thakur',t:'Maxillofacial'},
+    {n:'Suresh',t:'Plastic Surgeon'},{n:'Pillai',t:'Cardiologist'},{n:'Ahmed',t:'Dubai'},
+    {n:'Sen',t:'Hospital Owner'},{n:'Pandey',t:'Physiotherapist'},{n:'Saxena',t:'Clinic Owner'},
+    {n:'Mukherjee',t:'Neurosurgeon'},{n:'Bhatt',t:'Surgeon'},{n:'Malhotra',t:'Cardiologist'},
+    {n:'Krishnan',t:'Physician'},{n:'Chen',t:'Singapore'},{n:'Bhattacharya',t:'Pediatrician'},
+    {n:'Joshi',t:'Dentist'},{n:'Garcia',t:'London'},{n:'Tan',t:'Singapore'},
+    {n:'Park',t:'Seoul'}
+  ];
+
+  var grid = document.getElementById('wall-grid');
+  if (!grid) return;
+  var plus = grid.querySelector('.avatar--more');
+  var frag = document.createDocumentFragment();
+
+  doctors.forEach(function(d, i){
+    var img = document.createElement('img');
+    img.className = 'avatar-img';
+    img.alt = 'Dr. ' + d.n;
+    img.title = 'Dr. ' + d.n + ' · ' + d.t;
+    img.loading = 'lazy';
+    img.src = 'doctors/d' + (i + 1) + '.jpg';
+    frag.appendChild(img);
+  });
+
+  grid.insertBefore(frag, plus);
+})();
+</script>
+
+<!-- Image fallback handler -->
+<script>
+(function(){
+  function makePortraitFallback(label, isLight){
+    var bg = isLight ? 'linear-gradient(135deg,#faf8ff,#c4b5fd)' : 'linear-gradient(135deg,#2d1b69,#8b5cf6)';
+    var fg = isLight ? '#2d1b69' : '#fff';
+    var shape = isLight ? 'rgba(45,27,105,0.15)' : 'rgba(255,255,255,0.18)';
+    var d = document.createElement('div');
+    d.style.cssText = 'position:absolute;inset:0;background:'+bg+';display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border-radius:inherit;color:'+fg;
+    d.innerHTML =
+      '<svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="'+fg+'" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>' +
+      '<div style="font-family:Caveat,cursive;font-weight:700;font-size:2.5rem;line-height:1">'+label+'</div>' +
+      '<div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:800;opacity:0.6">Photo Placeholder</div>';
+    return d;
+  }
+  function makeSigFallback(isLight){
+    var color = isLight ? 'transparent' : '#fbbf24';
+    var grad = isLight ? 'background:linear-gradient(135deg,#1a1147,#a855f7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;' : 'color:#fbbf24;';
+    var d = document.createElement('span');
+    d.style.cssText = 'font-family:Caveat,cursive;font-weight:700;font-size:2rem;line-height:1;display:inline-block;'+grad;
+    d.textContent = 'Nishu';
+    return d;
+  }
+  document.querySelectorAll('img.fallback-portrait').forEach(function(img){
+    img.addEventListener('error', function(){
+      var parent = img.parentElement;
+      if (getComputedStyle(parent).position === 'static') parent.style.position = 'relative';
+      var label = img.dataset.label || 'Nishu';
+      var isLight = img.dataset.light === 'true';
+      img.style.visibility = 'hidden';
+      parent.appendChild(makePortraitFallback(label, isLight));
+    });
+    if (img.complete && img.naturalWidth === 0) img.dispatchEvent(new Event('error'));
+  });
+  document.querySelectorAll('img.fallback-sig').forEach(function(img){
+    img.addEventListener('error', function(){
+      var isLight = img.dataset.light === 'true';
+      var fb = makeSigFallback(isLight);
+      // Match height context
+      if (img.classList.contains('nav__sig-img')) fb.style.fontSize = '2rem';
+      else if (img.classList.contains('footer__sig-img')) { fb.style.fontSize = '1.75rem'; fb.style.color = 'rgba(255,255,255,0.85)'; fb.style.background = 'none'; fb.style.webkitTextFillColor = 'rgba(255,255,255,0.85)'; }
+      else if (img.classList.contains('mission-signoff__sig-img')) { fb.style.fontSize = '2.5rem'; fb.style.color = '#fbbf24'; fb.style.background='none'; fb.style.webkitTextFillColor='#fbbf24'; }
+      else if (img.classList.contains('hero-portrait__name-img')) { fb.style.fontSize = '2.25rem'; fb.style.color = '#fbbf24'; fb.style.background='none'; fb.style.webkitTextFillColor='#fbbf24'; }
+      img.replaceWith(fb);
+    });
+    if (img.complete && img.naturalWidth === 0) img.dispatchEvent(new Event('error'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You · Clarity Blueprint</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   DESIGN SYSTEM · CLARITY BLUEPRINT
+   ============================================ */
+:root {
+  --ink:       #0a0418;
+  --navy:      #1a1147;
+  --deep:      #2d1b69;
+  --purple:    #8b5cf6;
+  --violet:    #a855f7;
+  --lilac:     #c4b5fd;
+  --cream:     #faf8ff;
+  --white:     #ffffff;
+  --gold:      #fbbf24;
+  --gold-dk:   #f59e0b;
+  --gray-200:  #e5e7eb;
+  --gray-600:  #4b5563;
+
+  --grad:      linear-gradient(135deg, var(--ink) 0%, var(--navy) 45%, var(--deep) 100%);
+  --grad-text: linear-gradient(135deg, var(--navy) 0%, var(--purple) 50%, var(--violet) 100%);
+  --grad-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-dk) 100%);
+
+  --r-md: 16px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+
+  --f-sans: 'Inter', system-ui, sans-serif;
+
+  --sh-glow-p: 0 0 0 1px rgba(139, 92, 246, 0.2), 0 24px 48px -12px rgba(139, 92, 246, 0.4);
+  --sh-float:  0 8px 24px rgba(10, 4, 24, 0.08), 0 16px 48px rgba(10, 4, 24, 0.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--f-sans); color: var(--ink); background: var(--cream); -webkit-font-smoothing: antialiased; line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }
+a { color: inherit; text-decoration: none; }
+
+.container { max-width: 800px; margin: 0 auto; padding: 64px 24px; text-align: center; flex: 1; display: flex; align-items: center; justify-content: center; }
+
+.thank-you-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-xl);
+  padding: 48px;
+  box-shadow: var(--sh-float);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.thank-you-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 8px;
+  background: var(--grad);
+}
+
+.icon-wrapper {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--grad);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 32px;
+  box-shadow: var(--sh-glow-p);
+}
+
+.icon-wrapper svg { width: 40px; height: 40px; }
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.gt-text {
+  background: var(--grad-text);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  max-width: 500px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+.next-steps {
+  background: var(--cream);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: var(--r-md);
+  padding: 24px;
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+.step-item:last-child { margin-bottom: 0; }
+
+.step-num {
+  width: 24px; height: 24px;
+  background: var(--purple);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 800;
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 16px 32px;
+  border-radius: var(--r-pill);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: var(--grad);
+  color: var(--white);
+  box-shadow: var(--sh-glow-p);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4), 0 32px 56px -12px rgba(139, 92, 246, 0.5); }
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="thank-you-card">
+      <div class="icon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <h1 class="title">You're in! <br/><span class="gt-text">Seat Reserved.</span></h1>
+      <p class="lead">Thank you for registering. You've just taken the first step towards ethical, predictable growth.</p>
+
+      <div class="next-steps">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div><b>Check your inbox</b> — We've just sent you an email with the Zoom link. Make sure to whitelist our email address.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div><b>Mark your calendar</b> — Set a reminder right now so you don't miss out. Only 100 spots are available live.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div><b>Bring your questions</b> — Nishu will be answering your hardest growth questions live at the end.</div>
+        </div>
+      </div>
+
+      <a href="index.html" class="btn">Return to Homepage</a>
+    </div>
+  </div>
+
+</body>
+</html>
